@@ -17,15 +17,26 @@ app.get('/api/notes', (req, res) => {
 
 // Endpoint to save notes
 app.post('/api/notes', (req, res) => {
-    const newNote = req.body;
-    const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'Develop/db/db.json'), 'utf8'));
-    newNote.id = notes.length > 0 ? notes[notes.length - 1].id + 1 : 1;  
-    notes.push(newNote);
-    fs.writeFileSync(path.join(__dirname, 'Develop/db/db.json'), JSON.stringify(notes));
-    res.json(newNote);
+    
 });
 
-// route to notes.html 
+// Endpoint to delete 
+app.delete('/api/notes/:id', (req, res) => {
+    const noteIdToDelete = parseInt(req.params.id);
+    const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'Develop/db/db.json'), 'utf8'));
+
+    const noteIndex = notes.findIndex(note => note.id === noteIdToDelete);
+
+    if (noteIndex !== -1) {
+        notes.splice(noteIndex, 1);
+        fs.writeFileSync(path.join(__dirname, 'Develop/db/db.json'), JSON.stringify(notes));
+        res.json({ message: 'Note deleted successfully' });
+    } else {
+        res.status(404).json({ error: 'Note not found' });
+    }
+});
+
+// Route to notes.html 
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
 });
@@ -37,7 +48,6 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT ${PORT}`);
 });
-
 
 app.use((err, req, res, next) => {
     console.error(err.stack); 
