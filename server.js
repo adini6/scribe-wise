@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const { v4: uuidv4 } = require('uuid'); 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -17,14 +18,20 @@ app.get('/api/notes', (req, res) => {
 
 // Endpoint to save notes
 app.post('/api/notes', (req, res) => {
-    
+    const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'Develop/db/db.json'), 'utf8'));
+    const newNote = {
+        ...req.body,
+        id: uuidv4()
+    };
+    notes.push(newNote);
+    fs.writeFileSync(path.join(__dirname, 'Develop/db/db.json'), JSON.stringify(notes));
+    res.json(newNote);
 });
 
 // Endpoint to delete 
 app.delete('/api/notes/:id', (req, res) => {
-    const noteIdToDelete = parseInt(req.params.id);
+    const noteIdToDelete = req.params.id;
     const notes = JSON.parse(fs.readFileSync(path.join(__dirname, 'Develop/db/db.json'), 'utf8'));
-
     const noteIndex = notes.findIndex(note => note.id === noteIdToDelete);
 
     if (noteIndex !== -1) {
