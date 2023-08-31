@@ -2,7 +2,7 @@
 
 ##  Description
 
-Scribe Wise a digital sticky note. Jot down thoughts, tasks, or those random thoughts.You are able to access Scribe Wise anytime on Heroku https://scribe-wise-deb15b9c7ad7.herokuapp.com/.
+Scribe Wise a digital sticky note. Jot down thoughts, tasks, or those random thoughts.You are able to access [Scribe Wise on Heroku](https://scribe-wise-deb15b9c7ad7.herokuapp.com/).
 
 ## User Story
 ```bash
@@ -18,9 +18,13 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ### Local Installation:
 
 1. **Clone Repository**: 
-   ```bash
-   git clone adini6/scribe-wise.git](https://github.com/adini6/scribe-wise
-   ```
+   - Run the following command in your terminal:
+     ```bash
+     git clone https://github.com/adini6/scribe-wise.git
+     ```
+   - Or directly access the repository [here](https://github.com/adini6/scribe-wise).
+
+   
 2. **Install Dependencies**:
     ```bash
     npm install
@@ -31,11 +35,6 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
     ```
 4. **Use broswer**:
    http://localhost:3000/
-
-  
-
-
-
 
 ## Demo 
 ![scribe-wise ss](https://github.com/adini6/scribe-wise/assets/28551058/d8e93fc5-76ec-44b3-beda-c589f7a2ff66)
