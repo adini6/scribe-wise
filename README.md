@@ -46,5 +46,13 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 - Node.js
 - Heroku
 
+## Questions
+
+For any questions or inquiries, please contact me:
+
+- **GitHub**: [adin6](https://github.com/adin6)
+- **Email**: [adini18@gmail.com](mailto:adini18@gmail.com)
+
+
 
 
