@@ -2,7 +2,7 @@
 
 ##  Description
 
-Scribe Wise a digital sticky note. Jot down thoughts, tasks, or those random thoughts.You are able to access [Scribe Wise on Heroku](https://scribe-wise-deb15b9c7ad7.herokuapp.com/).
+Scribe Wise is a digital sticky note. Jot down thoughts, tasks, or anything that pops into your mind. Access Scribe Wise anytime, anywhere on [Heroku](https://scribe-wise-deb15b9c7ad7.herokuapp.com/).
 
 ## User Story
 ```bash
