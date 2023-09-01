@@ -53,6 +53,7 @@ For any questions or inquiries, please contact me:
 - **GitHub**: [adin6](https://github.com/adin6)
 - **Email**: [adini18@gmail.com](mailto:adini18@gmail.com)
 
-
+## Credit 
+Cloned starter code from https://github.com/coding-boot-camp/miniature-eureka.git
 
 
